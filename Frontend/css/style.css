@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Inter, Arial, sans-serif;
+    background: linear-gradient(180deg, #eaf1ff 0%, #f8fafc 45%);
+    color: var(--text);
+}
+
+.header {
+    padding: 3rem 1.5rem;
+    background:  #9ED3DC;
+    color: #FEFD99;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
