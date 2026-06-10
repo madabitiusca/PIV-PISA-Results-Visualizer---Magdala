@@ -20,3 +20,16 @@ body {
     font-size: clamp(2rem, 5vw, 3.5rem);
 }
 
+.container {
+    width: min(1200px, 94%);
+    margin: -2rem auto 3rem;
+}
+
+
+label {
+    display: flex;
+    flex-direction: column;
+    gap: .45rem;
+    font-weight: 700;
+    color: #334155;
+}
