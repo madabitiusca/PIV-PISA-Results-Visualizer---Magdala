@@ -84,3 +84,19 @@ button {
 button:hover {
     background: var(--blue-dark);
 }
+
+@media (max-width: 900px) {
+    .filters,
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        margin-top: -1rem;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+}
