@@ -20,11 +20,35 @@ body {
     font-size: clamp(2rem, 5vw, 3.5rem);
 }
 
+.header p {
+    margin-top: .5rem;
+    color: #dbeafe;
+}
+
 .container {
     width: min(1200px, 94%);
     margin: -2rem auto 3rem;
 }
 
+.filters,
+.card,
+.chart-card,
+.table-card,
+.export-card {
+    background: rgba(255,255,255,.95);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: 0 15px 35px rgba(15, 23, 42, .08);
+}
+
+
+.filters {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) auto;
+    gap: 1rem;
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+}
 
 label {
     display: flex;
@@ -32,4 +56,31 @@ label {
     gap: .45rem;
     font-weight: 700;
     color: #334155;
+}
+
+
+select,
+button {
+    min-height: 44px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    padding: .75rem .9rem;
+    font-size: .95rem;
+}
+
+select {
+    background: white;
+}
+
+button {
+    align-self: end;
+    border: none;
+    background: var(--blue);
+    color: white;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--blue-dark);
 }
