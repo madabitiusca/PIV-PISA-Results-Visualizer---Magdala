@@ -53,6 +53,68 @@
 
         <button id="searchBtn" type="button">Search</button>
     </section>
+
+       <section class="cards">
+        <article class="card">
+            <h2>Rezultate</h2>
+            <p id="resultCount">0</p>
+        </article>
+
+        <article class="card">
+            <h2>Scor mediu</h2>
+            <p id="avgScore">-</p>
+        </article>
+
+        <article class="card">
+            <h2>Țară selectată</h2>
+            <p id="selectedCountry">-</p>
+        </article>
+    </section>
+
+    <section class="chart-card">
+        <h2>Evoluție scor PISA</h2>
+        <svg id="lineChart" viewBox="0 0 800 360" role="img" aria-label="Grafic evoluție scor PISA"></svg>
+    </section>
+
+    <section class="chart-card">
+        <h2>Comparație țări</h2>
+        <svg id="barChart" viewBox="0 0 800 360" role="img" aria-label="Grafic comparație țări"></svg>
+    </section>
+
+    <section class="chart-card">
+        <h2>Math vs Reading vs Science</h2>
+        <svg id="radarChart" viewBox="0 0 800 360" role="img" aria-label="Grafic radar discipline PISA"></svg>
+    </section>
+
+    <section class="table-card">
+        <h2>Rezultate PISA</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Țară</th>
+                    <th>Cod</th>
+                    <th>An</th>
+                    <th>Disciplină</th>
+                    <th>Categorie</th>
+                    <th>Scor</th>
+                </tr>
+            </thead>
+            <tbody id="resultsBody">
+                <tr>    
+                    <td colspan="6">Nu există date încă.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="export-card">
+        <h2>Export</h2>
+        <button id="exportCsv" type="button">CSV</button>
+        <button id="exportJson" type="button">JSON</button>
+        <button id="exportSvg" type="button">SVG</button>
+        <button id="exportWebp" type="button">WebP</button>
+    </section>
 </main>
 
 </body>
