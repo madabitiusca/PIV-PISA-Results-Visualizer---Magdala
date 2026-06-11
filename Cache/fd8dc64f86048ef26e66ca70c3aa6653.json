@@ -1,0 +1,29 @@
+{
+    "success": true,
+    "data": [
+        {
+            "country": "Australia",
+            "country_code": "AUS",
+            "year": 2018,
+            "discipline": "math",
+            "subject": "total",
+            "score": 491
+        },
+        {
+            "country": "Australia",
+            "country_code": "AUS",
+            "year": 2018,
+            "discipline": "reading",
+            "subject": "total",
+            "score": 503
+        },
+        {
+            "country": "Australia",
+            "country_code": "AUS",
+            "year": 2018,
+            "discipline": "science",
+            "subject": "total",
+            "score": 503
+        }
+    ]
+}

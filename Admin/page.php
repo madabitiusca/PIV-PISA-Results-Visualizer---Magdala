@@ -109,10 +109,11 @@ $education = $pdo->query(
 </div>
 
 <div class="actions">
-
+ <a href="clear_cache.php">
+    Clear Cache</a>
+    
     <a href="logout.php">
-        Logout
-    </a>
+        Logout</a>
 
 </div>
 

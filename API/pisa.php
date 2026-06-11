@@ -1,8 +1,19 @@
 <?php
 
 require_once __DIR__ . '/../Config/Database.php';
+require_once __DIR__ . '/../Config/Cache.php';
 
 header('Content-Type: application/json; charset=utf-8');
+
+$cache = new Cache(__DIR__ . '/../Cache', 300);
+$cacheKey = $_SERVER['REQUEST_URI'];
+
+$cached = $cache->get($cacheKey);
+
+if ($cached !== null) {
+    echo $cached;
+    exit;
+}
 
 try {
     $pdo = Database::getConnection();
@@ -52,10 +63,13 @@ try {
     $stmt = $pdo->prepare($sql);
     $stmt->execute($params);
 
-    echo json_encode([
-        'success' => true,
-        'data' => $stmt->fetchAll(PDO::FETCH_ASSOC)
-    ], JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+    $response = json_encode([
+    'success' => true,
+    'data' => $stmt->fetchAll(PDO::FETCH_ASSOC)], JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+
+$cache->set($cacheKey, $response);
+
+echo $response;
 
 } catch (Throwable $e) {
     http_response_code(500);
