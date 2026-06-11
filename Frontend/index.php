@@ -16,7 +16,7 @@
         <label for="country">
             Țară
             <select id="country">
-                <option value="">Loading...</option>
+                <option value="">Loading</option>
             </select>
         </label>
 
@@ -116,6 +116,7 @@
         <button id="exportWebp" type="button">WebP</button>
     </section>
 </main>
+<script src="app.js"></script>
 
 </body>
 </html>

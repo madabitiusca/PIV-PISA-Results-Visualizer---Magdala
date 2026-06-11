@@ -1,7 +1,7 @@
 
 :root {
-    --blue: #2563eb;
-    --blue-dark: #1d4ed8;
+    --pink: #FCB7C7;
+    --pink-dark: #CA6180;
     --bg: #eef2f7;
     --card: #ffffff;
     --text: #172033;
@@ -86,14 +86,14 @@ select {
 button {
     align-self: end;
     border: none;
-    background: var(--blue);
+    background: var(--pink);
     color: white;
     font-weight: 800;
     cursor: pointer;
 }
 
 button:hover {
-    background: var(--blue-dark);
+    background: var(--pink-dark);
 }
 
 

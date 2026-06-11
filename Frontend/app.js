@@ -8,6 +8,8 @@ const resultsBody = document.getElementById('resultsBody');
 const resultCount = document.getElementById('resultCount');
 const avgScore = document.getElementById('avgScore');
 const selectedCountry = document.getElementById('selectedCountry');
+const exportWebpBtn = document.getElementById('exportWebp')
+    .addEventListener('click', exportSvgAsWebp);
 
 async function loadCountries() {
 try{
@@ -309,4 +311,40 @@ async function renderRadarChart() {
             `;
         }).join('')}
     `;
+}
+
+function exportSvgAsWebp() {
+    const svg = document.getElementById('lineChart');
+    const serializer = new XMLSerializer();
+    const svgString = serializer.serializeToString(svg);
+
+    const canvas = document.createElement('canvas');
+    canvas.width = 800;
+    canvas.height = 360;
+
+    const ctx = canvas.getContext('2d');
+
+    const image = new Image();
+    const svgBlob = new Blob([svgString], {
+        type: 'image/svg+xml;charset=utf-8'
+    });
+
+    const url = URL.createObjectURL(svgBlob);
+
+    image.onload = function () {
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(image, 0, 0);
+
+        URL.revokeObjectURL(url);
+
+        canvas.toBlob(function (blob) {
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'pisa_chart.webp';
+            link.click();
+        }, 'image/webp');
+    };
+
+    image.src = url;
 }
