@@ -8,10 +8,17 @@ try {
     $pdo = Database::getConnection();
 
     $stmt = $pdo->query("
-        SELECT code, name, region, income_group
-        FROM countries
-        WHERE region IS NOT NULL
-        ORDER BY name
+        SELECT DISTINCT 
+            c.code,
+            c.name,
+            c.region,
+            c.income_group
+        FROM countries c
+        INNER JOIN pisa_results p
+            ON p.country_code = c.code
+        WHERE c.code IS NOT NULL
+        AND c.code <> ''
+        ORDER BY c.name
     ");
 
     echo json_encode([
