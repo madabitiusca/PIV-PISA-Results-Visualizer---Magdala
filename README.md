@@ -64,7 +64,7 @@ Date privind indicatorii educationali:
 ## Structura Proiectului
 
 ```text
-PisaVis/
+PIV - Pisa/
 │
 ├── Admin/
 ├── Api/
