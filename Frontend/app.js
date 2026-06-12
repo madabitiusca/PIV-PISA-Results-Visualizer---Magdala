@@ -348,3 +348,38 @@ function exportSvgAsWebp() {
 
     image.src = url;
 }
+
+function buildExportUrl(format) {
+    const params = new URLSearchParams();
+
+    params.append('format', format);
+    params.append('country', countrySelect.value);
+    params.append('discipline', disciplineSelect.value);
+    params.append('subject', subjectSelect.value);
+
+    if (yearSelect.value !== '') {
+        params.append('year', yearSelect.value);
+    }
+
+    return `/Api/export.php?${params.toString()}`;
+}
+
+function exportData(format) {
+    window.location.href = buildExportUrl(format);
+}
+
+const exportCsvBtn = document.getElementById('exportCsv');
+const exportJsonBtn = document.getElementById('exportJson');
+const exportSvgBtn = document.getElementById('exportSvg');
+
+if (exportCsvBtn) {
+    exportCsvBtn.addEventListener('click', () => exportData('csv'));
+}
+
+if (exportJsonBtn) {
+    exportJsonBtn.addEventListener('click', () => exportData('json'));
+}
+
+if (exportSvgBtn) {
+    exportSvgBtn.addEventListener('click', () => exportData('svg'));
+}

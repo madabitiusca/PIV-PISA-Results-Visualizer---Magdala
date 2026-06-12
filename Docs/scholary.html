@@ -8,7 +8,7 @@
 
 <header>
     <h1>PIV — PISA Results Visualizer</h1>
-    <p><strong>Autor: </strong>Madalina Bitiusca</p>
+    <p><strong>Autor: </strong>Mădălina Bitiușcă</p>
 </header>
 
 <section>
@@ -61,6 +61,26 @@
 
     <p>Aplicația utilizează o arhitectură client-server. Browserul comunică asincron cu serviciile Web implementate în PHP prin Fetch API,
          iar acestea accesează baza de date SQLite folosind PDO și returnează rezultatele în format JSON.</p>
+        <h3>C4 Context Diagram</h3>
+
+    <img
+        src="Diagrams/C4_context.png"
+        alt="C4 Context Diagram"
+        style="max-width:100%; border:1px solid #ddd;"
+    >
+
+    <p>Diagrama C4 Context prezinta interactiunea dintre utilizator, aplicatia PIV Pisa si sursele externe de date utilizate.</p>
+
+    <h3>C4 Container Diagram</h3>
+
+    <img
+        src="Diagrams/C4_container.png"
+        alt="C4 Container Diagram"
+        style="max-width:100%; border:1px solid #ddd;">
+
+    <p>Diagrama C4 Container evidentiaza componentele tehnice ale aplicatiei si comunicarea dintre acestea.</p>
+
+
 </section>
 
 <section>
@@ -73,7 +93,13 @@
         <li><strong>indicators</strong> - indicatori educaționali.</li>
         <li><strong>education_stats</strong> - valori ale indicatorilor pe ani.</li>
     </ul>
+    <img
+    src="Diagrams/ERD.png"
+    alt="Entity Relationship Diagram"
+    style="max-width:100%;">
+    <p>Diagrama ERD prezintă structura bazei de date utilizate de aplicație și relațiile dintre entitățile principale.</p>
 </section>
+
 
 <section>
     <h2>6. Servicii Web</h2>
