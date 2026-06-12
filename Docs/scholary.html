@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>PIV — PISA Results Visualizer - Scholarly HTML Report</title>
+</head>
+<body>
+
+<header>
+    <h1>PIV — PISA Results Visualizer</h1>
+    <p><strong>Autor: </strong>Madalina Bitiusca</p>
+</header>
+
+<section>
+    <h2>1. Introducere</h2>
+    <p>
+        PIV — PISA Results Visualizer este o aplicație Web dezvoltată pentru vizualizarea, 
+        analiza și compararea rezultatelor testelor OECD PISA și a indicatorilor educaționali proveniți din baza de date World Bank Education Statistics.
+         Scopul aplicației este de a oferi utilizatorilor posibilitatea de a explora și interpreta date educaționale prin intermediul unor filtre flexibile, 
+         reprezentări grafice interactive și funcționalități de export.
+    </p>
+</section>
+
+<section>
+    <h2>2. Obiectivele Proiectului</h2>
+    <ul>
+        <li>Vizualizarea rezultatelor PISA.</li>
+        <li>Filtrarea multi-criterială a datelor.</li>
+        <li>Comparații între țări.</li>
+        <li>Integrarea Education Statistics.</li>
+        <li>Export CSV, JSON, SVG și WebP.</li>
+        <li>Modul propriu de administrare.</li>
+        <li>Mecanism propriu de caching.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>3. Sursele de Date</h2>
+    <p> Aplicația utilizează două surse principale de date:</p>
+
+     <h3>OECD PISA</h3>
+
+    <p>Datele OECD PISA conțin rezultatele elevilor la: </p>
+
+    <ul>
+        <li>Mathematics</li>
+        <li>Reading</li>
+        <li>Science</li>
+    </ul>
+
+    <h3>World Bank Education Statistics</h3>
+
+    <p>  Education Statistics furnizează indicatori educaționali
+        precum rata alfabetizării, cheltuielile pentru educație
+        și ratele de înscriere în sistemul educațional. </p>
+</section>
+
+<section>
+    <h2>4. Arhitectura Sistemului</h2>
+    <p> Aplicația utilizează o arhitectură bazată pe servicii Web.</p>
+
+    <p>Aplicația utilizează o arhitectură client-server. Browserul comunică asincron cu serviciile Web implementate în PHP prin Fetch API,
+         iar acestea accesează baza de date SQLite folosind PDO și returnează rezultatele în format JSON.</p>
+</section>
+
+<section>
+    <h2>5. Modelul Datelor</h2>
+    <p> Baza de date SQLite conține următoarele tabele: </p>
+
+    <ul>
+        <li><strong>countries</strong> - informații despre țări.</li>
+        <li><strong>pisa_results</strong> - rezultate OECD PISA.</li>
+        <li><strong>indicators</strong> - indicatori educaționali.</li>
+        <li><strong>education_stats</strong> - valori ale indicatorilor pe ani.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>6. Servicii Web</h2>
+    <ul>
+        <li><code>/Api/countries.php</code></li>
+        <li><code>/Api/pisa.php</code></li>
+        <li><code>/Api/education.php</code></li>
+        <li><code>/Api/compare.php</code></li>
+        <li><code>/Api/export.php</code></li>
+    </ul>
+
+    <p>Aceste servicii furnizează datele necesare interfeței și funcționalităților de export.</p>
+</section>
+
+<section>
+    <h2>7. Interfața Utilizator</h2>
+    <p>Interfața este realizată folosind HTML5, CSS3 și JavaScript.</p>
+
+    <p>Dashboard-ul conține:</p>
+    <ul>
+        <li>Filtre pentru căutare.</li>
+        <li>Carduri statistice.</li>
+        <li>Tabel cu rezultate.</li>
+        <li>Grafice.</li>
+        <li>Butoane de export.</li>
+    </ul>
+    <p> Designul este responsive și se adaptează dispozitivelor mobile. </p>
+
+</section>
+
+<section>
+    <h2>8. Vizualizarea Datelor</h2>
+    <p>Aplicația oferă trei tipuri de grafice:</p>
+
+    <ul>
+        <li>Line Chart – evoluția scorurilor în timp.</li>
+        <li>Bar Chart – comparații între țări.</li>
+        <li>Radar Chart – comparații între discipline.</li>
+    </ul>
+
+    <p>Graficele sunt generate folosind SVG și JavaScript.</p>
+</section>
+
+<section>
+    <h2>9. Exportul Datelor</h2>
+    <p>Aplicația permite exportul în:</p>
+
+    <ul>
+        <li>CSV</li>
+        <li>JSON</li>
+        <li>SVG</li>
+        <li>WebP</li>
+    </ul>
+</section>
+
+<section>
+    <h2>10. Securitate</h2>
+    <ul>
+        <li>Prepared Statements pentru prevenirea SQL Injection.</li>
+        <li>htmlspecialchars() pentru prevenirea XSS.</li>
+        <li>Sesiuni PHP pentru autentificarea administratorului.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>11. Modul de Administrare</h2>
+    <p>Modulul de administrare permite autentificarea administratorului și vizualizarea statisticilor privind baza de date. </p>
+</section>
+
+<section>
+    <h2>12. Mecanismul de Caching</h2>
+    <p> Pentru optimizarea performanței a fost implementat un mecanism propriu de caching bazat pe fișiere JSON.</p>
+    <p> Rezultatele API-urilor sunt salvate temporar și reutilizate pentru cereri identice. </p>
+</section>
+
+<section>
+    <h2>13. Tehnologii Utilizate</h2>
+    <ul>
+        <li>PHP</li>
+        <li>SQLite</li>
+        <li>PDO</li>
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>JavaScript</li>
+        <li>Fetch API</li>
+        <li>SVG</li>
+    </ul>
+</section>
+
+<section>
+    <h2>14. Concluzii</h2>
+    <p> PISA Results Visualizer reprezintă o soluție Web completă pentru analiza
+        și vizualizarea datelor educaționale provenite din surse
+        publice. Aplicația respectă cerințele privind serviciile Web,
+        comunicația asincronă, exportul în formate deschise,
+        administrarea și optimizarea performanței prin caching. </p>
+</section>
+
+</body>
+</html>
