@@ -1,8 +1,8 @@
-# PisaVis
+# PIV — PISA Results Visualizer
 
 ## Descriere
 
-PisaVis este o aplicatie Web dezvoltata in PHP si SQLite pentru vizualizarea, analiza si compararea rezultatelor OECD PISA si a indicatorilor educationali proveniti din World Bank Education Statistics.
+PIV — PISA Results Visualizer este o aplicatie Web dezvoltata in PHP si SQLite pentru vizualizarea, analiza si compararea rezultatelor OECD PISA si a indicatorilor educationali proveniti din World Bank Education Statistics.
 
 Aplicatia ofera functionalitati de filtrare, comparare, reprezentare grafica si export al datelor prin intermediul unei interfete Web responsive.
 
@@ -26,7 +26,7 @@ Aplicatia ofera functionalitati de filtrare, comparare, reprezentare grafica si 
 
 ### Backend
 
-* PHP 8+
+* PHP 
 * SQLite 3
 * PDO
 
@@ -34,7 +34,7 @@ Aplicatia ofera functionalitati de filtrare, comparare, reprezentare grafica si 
 
 * HTML5
 * CSS3
-* JavaScript (Vanilla JS)
+* JavaScript 
 * Fetch API
 * SVG
 
@@ -70,15 +70,13 @@ PisaVis/
 ├── Api/
 ├── Cache/
 ├── Config/
-├── Core/
 ├── Data/
 ├── Database/
 ├── Docs/
+├── Frontend/
 ├── Import/
-├── Public/
 │
 ├── README.md
-└── schema.sql
 ```
 
 ---
@@ -247,7 +245,7 @@ php -S localhost:8000
 ### 4. Accesarea aplicatiei
 
 ```text
-http://localhost:8000/Public/index.php
+http://localhost:8000/Frontend/index.php
 ```
 
 ---
